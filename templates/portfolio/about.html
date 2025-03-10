@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_content %}
+<div class="container-fluid">
+    <div class="mt-5 about-custom-shadow rounded">
+        <div class="row align-items-start">
+            <div class="col-md-4" data-aos="fade-up">
+                {% if author %}
+                    <img src="{{ author.image.url }}" alt="Image" class="img-fluid author-image">
+                {% else %}
+                    <p>Информация об авторе отсутствует.</p>
+                {% endif %}
+            </div>
+            <div class="col-md-8" data-aos="fade-up">
+                <div>{{ author.about|safe }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

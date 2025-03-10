@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<section class="section">
+   <div class="container">
+      <div class="row mb-4 align-items-center">
+         <div class="col-md-6" data-aos="fade-up">
+             <br>
+            <h1>Подробнее о проекте</h1>
+            <h2>"{{ projects.title }}"</h2>
+         </div>
+      </div>
+   </div>
+
+   <div class="row">
+       <div class="col-md-6">
+           {% if projects.image %}
+           <img src="{{ projects.image.url }}" class="image-with-margin image-full-width">
+           {% endif %}
+       </div>
+       <div class="col-md-4">
+           <h5>О проекте:</h5>
+           <p>{{ projects.description }}</p>
+           <br>
+           <h5>Стеки:</h5>
+           <ul>
+               {% for stack_item in stack_list %}
+                   <li>{{ stack_item }}</li>
+               {% endfor %}
+           </ul>
+           <br>
+           <a href="{{ projects.link }}" class="btn btn-primary" target="_blank">Сайт проекта</a>
+       </div>
+   </div>
+</section>
+{% endblock page_content %}

@@ -1,0 +1,297 @@
+/* Основные стили */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    background-image: url("../img/fon1.jpg");
+    background-size: cover;
+    display: flex; /* Используем flexbox для управления дочерними элементами */
+    flex-direction: column; /* Вертикальное выравнивание элементов на странице */
+    min-height: 100vh; /* Обеспечивает, что тело займёт 100% высоты экрана */
+    margin: 0; /* Убираем отступы по умолчанию */
+}
+
+/* основной контент занимает всё доступное пространство */
+.main-content {
+    flex: 1; /* Заставляет основной контент занимать все доступное пространство между навбаром и футером */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #111;
+    transition: color 0.3s ease;
+}
+
+    /* Стили для навигационной панели (Navbar) */
+
+.navbar {
+    background-color: #e2e1eb; /* Фон навбара */
+    padding: 10px 0; /* Внутренние отступы для навбара */
+}
+
+.navbar-nav {
+    flex-direction: row; /* Направление флекс-контейнера */
+    justify-content: center; /* Центрирование элементов навигации */
+    width: 100%; /* Ширина 100% для центрирования */
+    color: #111;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: center; /* Вертикальное выравнивание */
+    padding: 10px 0; /* Устанавливаем внутренние отступы */
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold; /* Жирный шрифт для ссылок */
+}
+
+.nav-item {
+    margin: 0 70px; /* Отступы между элементами навигации */
+}
+
+.nav-item:first-child {
+    margin-left: 200px; /* Отступ слева для первого элемента */
+}
+
+/* Эффект наведения для навигационных ссылок */
+.nav-item a:hover {
+    color: #767585; /* Цвет при наведении */
+}
+
+.logo {
+    width: 50px;
+    height: 40px;
+}
+
+.nowrap {
+    white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.top-menu li a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: #111;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+}
+
+.top-menu li a:hover::after {
+    transform: scale(1);
+}
+.navbar-collapse {
+    width: 100%; /* Обеспечьте, что контейнер занимает всю ширину экрана */
+}
+
+@media (max-width: 576px) { /* Для мобильных устройств */
+    .navbar-collapse {
+        max-height: 70vh; /* Ограничьте высоту коллапсированного меню */
+        overflow-y: auto; /* Добавьте прокрутку по вертикали, если элементы не помещаются */
+    }
+
+    .navbar-collapse.show {
+        display: block; /* Убедитесь, что меню видно при открытии */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Отображение элементов в колонке */
+        width: 100%; /* Ширина меню на мобильных устройствах */
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px; /* Отступ между элементами меню */
+    }
+}
+
+
+                /* Стили для раздела "О себе" */
+
+.about-custom-shadow {
+    box-shadow: 5px 5px 25px 19px #29494d; /* Тень блока */
+    margin: 0 auto; /* Центрирование */
+    padding: 90px; /* Внутренний отступ */
+    background-color: #f7f7f7; /* Цвет фона блока */
+    max-width: 1500px;
+}
+
+
+.author-image {
+    max-width: 100%;  /* Гарантирует, что изображение не выходит за пределы родительского контейнера */
+    height: auto;      /* Сохраняет пропорции изображения */
+    margin-bottom: 20px; /* Отступ снизу для разделения изображения и текста */
+}
+
+@media (max-width: 576px) { /* Реакция для мобильных устройств */
+    .about-custom-shadow {
+        padding: 15px; /* Добавляем отступы к контейнеру на мобильных устройствах */
+    }
+
+    .author-image {
+        margin-bottom: 10px; /* Уменьшаем отступ, если необходимо */
+    }
+}
+
+                         /* Стили для главной страницы */
+
+.custom-container {
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #dddce8; /* Цвет фона */
+    box-shadow: 5px 5px 25px 19px #29494d; /* Тень */
+    border-radius: 8px; /* Скругление углов */
+}
+
+.header-container {
+    max-width: 400px;
+    margin-top: 150px;
+}
+
+.custom-header {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitle-container {
+    margin-top: 40px; /* Расстояние между контейнерами */
+    max-width: 500px; /* Максимальная ширина для заголовка */
+}
+
+.custom-subtitle {
+    margin: 0; /* Убираем отступы */
+    text-align: center; /* Центрирование текста */
+}
+
+
+                                /* Стили для карточек проектов */
+.my-projects-title {
+    margin-top: 30px; /* Увеличиваем отступ сверху */
+    margin-bottom: 30px; /* Увеличиваем отступ снизу */
+}
+
+
+.card-custom {
+    width: 100%;
+    height: auto;
+}
+
+.card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+.image-with-margin {
+    margin-left: 20px;
+}
+
+.image-full-width {
+    width: 80%; /* Ширина изображения */
+}
+
+                                /* Стили для contact */
+
+.message-form {
+    display: flex;                  /* Используем Flexbox для центрального выравнивания */
+    flex-direction: column;        /* Располагаем элементы по вертикали */
+    align-items: center;           /* Центрируем элементы по горизонтали */
+}
+
+.form-group {
+    width: 100%;                  /* Занимает полную ширину контейнера */
+    max-width: 800px;            /* Максимальная ширина поля (можно настроить) */
+    margin: 10px 0;              /* Отступы между полями */
+}
+
+input, textarea {
+    width: 100%;                  /* Ширина полей ввода на 100% */
+    padding: 10px;               /* Отступы внутри полей */
+    border: 1px solid #ccc;      /* Граница полей */
+    border-radius: 5px;          /* Скругление углов */
+}
+
+button {
+    margin-top: 20px;            /* Отступ сверху для кнопки */
+    padding: 10px 20px;          /* Отступы кнопки */
+
+    background-color: #007bff;   /* Цвет фона кнопки */
+    color: #fff;                  /* Цвет текста кнопки */
+    border: none;                 /* Убираем границу кнопки */
+    border-radius: 5px;          /* Скругление углов кнопки */
+    cursor: pointer;              /* Указатель при наведении */
+}
+
+button:hover {
+    background-color: #0056b3;   /* Цвет фона кнопки при наведении */
+}
+
+.site-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    transition: transform 0.3s;
+}
+
+.site-icon:hover {
+    transform: scale(1.1);        /* Увеличение иконки при наведении */
+}
+
+                     /* Стили для футера */
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    padding: 10px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+
+footer .footer__links {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+footer .footer__link {
+    margin: 0 15px;
+}
+
+footer a {
+    color: #ccc;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .divider {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    margin: 10px auto;
+}
+
+footer .footer__copyright {
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+    text-transform: none;
+}
+
+footer .footer__link a:hover {
+    color: #a7c1d6;
+}

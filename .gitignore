@@ -1,0 +1,6 @@
+/.venv/
+/.idea/
+/db.sqlite3
+/1.py
+/.env
+/portfolio/migrations/

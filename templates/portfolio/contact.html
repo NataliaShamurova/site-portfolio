@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<section class="section pb-5">
+   <div class="container">
+      <div class="row mb-5 align-items-end">
+         <div class="col-md-6" data-aos="fade-up">
+             <br>
+             <h1>Мои контакты:</h1>
+             <br>
+         </div>
+
+          <h4>Вы можете связаться со мной любым удобным для Вас способом:</h4>
+
+          <div class="site-links text-center">
+              {% for site in sites %}
+                  <a href="{{ site.link }}" target="_blank" title="{{ site.name }}">
+                      <img src="{{ site.image.url }}" alt="{{ site.name }}" class="site-icon">
+                  </a>
+              {% endfor %}
+          </div>
+          <h4>Или написать мне напрямую через форму ниже и Ваше сообщение сразу попадет ко мне на почту:</h4>
+          <div class="row justify-content-center">
+              <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
+                  <form action="" method="post" role="form" class="message-form text-center"> <!-- добавляем text-center -->
+                      {% csrf_token %}
+                      {% if success %}
+                      <div class="alert alert-success">
+                          <strong>Сообщение отправлено!</strong>
+                      </div>
+                      {% else %}
+                      {% for field in form %}
+                      <div class="form-group text-center"> <!-- Центрируем каждое поле -->
+                          {{ field.label_tag }}
+                          {{ field }}
+                          {% if field.errors %}
+                          <div class="alert alert-danger">
+                              <strong>{{ field.errors }}</strong>
+                          </div>
+                          {% endif %}
+                      </div>
+                      {% endfor %}
+                      <button type="submit">Отправить сообщение</button>
+                      {% endif %}
+                  </form>
+              </div>
+          </div>
+      </div>
+   </div>
+</section>
+{% endblock page_content %}
